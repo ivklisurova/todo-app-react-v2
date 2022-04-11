@@ -12,7 +12,7 @@ function App() {
     setItem(newItem);
   }
 
-  function handleClick(event) {
+  function handleClick() {
     !(item.length === 0 || !item.trim()) &&
       setList((prevItems) => {
         return [...prevItems, item];
