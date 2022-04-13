@@ -22,6 +22,14 @@ function App() {
         setItem("");
     }
 
+    function deleteItem(id) {
+        setList(prevItems => {
+            return prevItems.filter((item, index) => {
+                return index !== id;
+            })
+        })
+    }
+
     return (
         <div className="container">
             <div className="heading">
@@ -35,7 +43,7 @@ function App() {
             </div>
             <div>
                 <ul>
-                    {list.map((item, index) => <ToDoItem text={item}/>)}
+                    {list.map((item, index) => <ToDoItem key={index} id={index} text={item} isClicked={deleteItem}/>)}
                 </ul>
             </div>
         </div>
